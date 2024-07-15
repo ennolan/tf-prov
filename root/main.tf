@@ -1,3 +1,5 @@
+# Creating VPC resources
+
 module "vpc" {
     source = "../modules/vpc"
     region = var.region
@@ -24,17 +26,21 @@ module "nat" {
   pri_sub_6b_id = module.vpc.pri_sub_6b_id
 }
 
+# creating security groups
+
 module "security-group" {
   source = "../modules/security-group"
   vpc_id = module.vpc.vpc_id
 }
 
 # creating Key for instances
+
 module "key" {
   source = "../modules/key"
 }
 
 # Creating Application Load balancer
+
 module "alb" {
   source         = "../modules/alb"
   project_name   = module.vpc.project_name
@@ -43,6 +49,8 @@ module "alb" {
   pub_sub_2b_id = module.vpc.pub_sub_2b_id
   vpc_id         = module.vpc.vpc_id
 }
+
+# Creating auto-scaling groups
 
 module "asg" {
   source         = "../modules/asg"
@@ -67,7 +75,8 @@ module "rds" {
 }
 
 
-# create cloudfront distribution 
+# create cloudfront distribution
+
 module "cloudfront" {
   source = "../modules/cloudfront"
   certificate_domain_name = var.certificate_domain_name
