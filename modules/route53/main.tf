@@ -1,4 +1,4 @@
-
+# configure route53
 data "aws_route53_zone" "public-zone" {
   name         = var.hosted_zone_name
   private_zone = false
