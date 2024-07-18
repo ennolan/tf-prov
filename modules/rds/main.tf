@@ -1,3 +1,4 @@
+# create resources for rds
 resource "aws_db_subnet_group" "db-subnet" {
   name       = var.db_sub_name
   subnet_ids = [var.pri_sub_5a_id, var.pri_sub_6b_id] # Replace with your private subnet IDs
