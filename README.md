@@ -1,6 +1,6 @@
 # 🚀 Provisioning and deploying resources for a 2-tier application using Terraform 
 
-✨This repository is created to learn how to provision and deploy a 2-tier application on AWS using Terraform. 
+✨This repository is created to learn how to provision and deploy a 2-tier application on AWS using Terraform
 
 
 ## 🖥️ Configuration with Terraform
